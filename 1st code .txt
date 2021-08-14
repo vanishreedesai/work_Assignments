@@ -1,0 +1,70 @@
+
+using System; 
+using System.Collections.Generic;
+using System.Linq; 
+using System.Text;
+using System.Threading.Tasks; 
+namespace vp_assignment_1_
+ { 
+class Program 
+{ 
+static void Main(string[] args) 
+{ 
+List<int> x = new List<int>();
+ List<int> odd=new List<int>();
+ List<int> even=new List<int>(); 
+char c; 
+do 
+{ 
+Console.WriteLine("\nenter number");
+ int a;
+ a = int.Parse(Console.ReadLine()); 
+x.Add(a);
+ if (a % 2 == 0) 
+{
+ even.Add(a);
+ } 
+else 
+odd.Add(a); 
+Console.WriteLine("press y for enter another number"); 
+c = Console.ReadKey().KeyChar;
+ }
+ while (c=='y' || c=='Y') ; 
+ x.Sort();
+ Console.WriteLine("\nlist in assending order:"); 
+foreach (int a in x)
+ { 
+Console.WriteLine(a); 
+} 
+x.Reverse();
+ Console.WriteLine("\nlist in desending order:"); 
+foreach (int a in x)
+ {
+ Console.WriteLine(a);
+ } 
+even.Sort();
+
+ Console.WriteLine("\n even list in asending order:"); 
+foreach (int a in even) 
+{ 
+Console.WriteLine(a);
+ } 
+odd.Sort();
+ odd.Reverse(); 
+Console.WriteLine("\n odd list in desending order:"); 
+foreach (int a in odd)
+ { 
+Console.WriteLine(a); 
+} 
+int m; 
+m = even.Max(); 
+Console.WriteLine(" maximum number in even list :" );
+ Console.WriteLine(m);
+ int n; 
+n = odd.Min();
+ Console.WriteLine(" minimum number in odd list :"); 
+Console.WriteLine(n);
+ Console.ReadKey();
+}
+}
+}

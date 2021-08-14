@@ -1,0 +1,55 @@
+class 2Day3
+    {
+        int rollno;
+        string name;
+        string address;
+        int pincode;
+        int phoneno;
+       
+        float grossSal;
+        float pf;
+        float netSal;
+        
+        public void get(int rollno, string name,string address, int pincode, int phoneno,float gross, float PF)
+        {
+            this.rollno = rollno;
+            this.name = name;
+            this.address = address;
+            this.pincode = pincode;
+            this.phoneno = phoneno;
+            this.grossSal = gross;
+            this.pf = PF;
+        }
+
+        public string displaySal()
+        {
+            this.netSal = this.grossSal - this.pf;
+            if(this.netSal>10000)
+            {
+                return $"The net salaray is {this.netSal}\n" +
+                    $"Grade A";
+            }
+            else if(this.netSal>5000)
+            {
+                return $"The net salaray is {this.netSal}\n" +
+                    $"Grade B";
+            }
+         else
+                return $"The net salaray is {this.netSal}\n" +
+                    $"Grade C";
+        }
+
+
+    }
+    class 2Day3Test
+    {
+       public static void Main()
+        {
+            2Day3 e = new 2Day3();
+            e.get(1,"abc","xyz",123456,1234567891,50000, 1500);
+            Console.WriteLine(e.displaySal());
+
+           
+
+        }
+    }

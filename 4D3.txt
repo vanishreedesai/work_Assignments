@@ -1,0 +1,28 @@
+public interface Car
+    {
+        void read(string name);
+        void display(string name);
+
+    }
+
+    class 4Day3:Car
+    {
+        public void read(string name)
+        {
+            Console.WriteLine($"The car name is {name}");
+        }
+        public void display(string name)
+        {
+            Console.WriteLine($"The cost of {name} is 4000000");
+        }
+    }
+    class 4Day3test
+    {
+       public static void Main()
+        {
+            4Day3 e = new 4Day3();
+            e.read("xyz");
+            e.display("xyz");
+
+        }
+    }
