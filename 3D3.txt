@@ -1,0 +1,70 @@
+class 3Day3
+    {
+       
+        int regno;
+        string name;
+        public 3Day3(int regno,string name)
+        {
+            this.regno = regno;
+            this.name = name;
+        }
+        public override string ToString()
+        {
+            return $"Regno:{this.regno}\n" +
+                $"Name:{this.name}";
+        }
+    }
+    class science : 3Day3
+    {
+        float phy;
+        float chem;
+        float maths;
+        float avg;
+        public science(int regno,string name,float phy,float chem,float maths):base(regno,name)
+        {
+            this.phy = phy;
+            this.chem = chem;
+            this.maths = maths;
+        }
+        public override string ToString()
+        {
+            this.avg = (phy + maths + chem) / 3;
+            return base.ToString() + $"\nMarks obtained:\n" +
+                $"Physics:{this.phy}\nChemistry:{this.chem}\nMaths:{this.maths}\n" +
+                $"With an average of {this.avg}";
+        }
+
+
+
+
+    }
+    class commerce : 3Day3
+    {
+        float economics;
+        float accounts;
+        float banking;
+        float avg;
+        public commerce(int regno, string name, float economics, float accounts, float banking) : base(regno, name)
+        {
+            this.economics = economics;
+            this.accounts = accounts;
+            this.banking = banking;
+        }
+        public override string ToString()
+        {
+            this.avg = (economics + accounts + banking) / 3;
+            return base.ToString() + $"\nMarks obtained:\n" +
+                $"Economics:{this.economics}\nAccounts:{this.accounts}\nBanking:{this.banking}\n" +
+                $"With an average of {this.avg}";
+        }
+    }
+    class 3Day3Test
+    {
+        public static void Main()
+        {
+            science s = new science(10,"Abc", 90, 85, 95);
+            commerce c = new commerce(20, "Xyz", 95, 85, 88);
+            Console.WriteLine(s.ToString());
+            Console.WriteLine(c.ToString());
+        }
+    }
